@@ -12,7 +12,7 @@ $(document).ready(function() {
             { "data": "Salary" },
             { "data": "Department" }
         ],
-        "lengthMenu": [25, 50, 100, 500]
+        "lengthMenu": [10, 25, 50, 100, 500]
     });
     $('#upload_csv').on('submit', function(event){
         event.preventDefault();
