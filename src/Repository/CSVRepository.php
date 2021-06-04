@@ -28,7 +28,7 @@ class CSVRepository extends ServiceEntityRepository
             // ->andWhere('c.exampleField = :val')
             // ->setParameter('val', $value)
             ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(25)
             ->getQuery()
             ->getResult();
     }
