@@ -31,9 +31,10 @@ class AjaxController extends AbstractController
         if($draw>1){
             $csvdata = $this->getDoctrine()->getRepository(CSV::class)->findOneBySomeField($searchValue,$columnName,$columnSortOrder,$row,$rowperpage);
             $totalRecordwithFilter=$this->getDoctrine()->getRepository(CSV::class)->findOneBySomeFieldCount($searchValue,$columnName,$columnSortOrder,$row,$rowperpage);
-            $totalRecordwithFilter=0;
             if(is_numeric(@$totalRecordwithFilter[0]['count']))
                 $totalRecordwithFilter=$totalRecordwithFilter[0]['count'];
+            else
+                $totalRecordwithFilter=0;
         }
         else{
             $csvdata = $this->getDoctrine()->getRepository(CSV::class)->getData();

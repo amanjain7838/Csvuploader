@@ -7,35 +7,42 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('datatables/index.css')}}"/>
 
 </head>
-<body>
-   <form id="upload_csv" method="post" enctype="multipart/form-data">
-        <div class="col-md-3">
-             <label>Add Data</label>
-        </div>  
-        <div class="col-md-4">  
-           <input type="file" name="csv_file" id="csv_file" accept=".csv" style="margin-top:15px;" />
-        </div>  
-        <div class="col-md-5">  
-            <input type="submit" name="upload" id="upload" value="Upload" style="margin-top:10px;" class="btn btn-info" />
-        </div>  
-        <div style="clear:both"></div>
-   </form>
-    <div class="col-md-5">  
-        <a download="example.csv" href="/docs/importsheet.csv">Download Sample</a>
-        <button type="button" id="reset-data">Clear All Data</button>
-    </div>  
-	<table id="example" class="display" style="width:100%">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>DOB</th>
-                <th>ReportingManager</th>
-                <th>Salary</th>
-                <th>Department</th>
-            </tr>
-        </thead>
-    </table>
+<body class="bg-light">
+    <div class="container pt-3">
+        <h2>CSV UPLOADER</h2>
+       <form id="upload_csv" method="post" enctype="multipart/form-data" class="my-3">
+        <div class="row">
+            <div class="col-12">
+                <b>Import Data</b>
+                <a download="example.csv" href="/docs/importsheet.csv">Download Sample</a>
+            </div>  
+            <div class="col-md-3">  
+               <input type="file" name="csv_file" id="csv_file" accept=".csv">
+            </div>  
+            <div class="col-md-6 col-auto mr-auto">  
+                <input disabled="disabled" type="submit" name="upload" id="upload" value="Upload" class="btn btn-info disabledbtn">
+                <span class="spinner-border spinner-border-sm ml-2 upload-loader" style="display:none;" role="status" aria-hidden="true"></span>
+            </div>
+            <div class="col-auto">
+                <a class="btn btn-danger btn-sm ml-auto" id="reset-data"><span class="spinner-border spinner-border-sm mr-2 clear-data-loader" style="display:none;" role="status" aria-hidden="true"></span>Clear All Data</a>
+            </div>  
+        </div>
+       </form>
+
+
+    	<table id="example" class="display table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>DOB</th>
+                    <th>ReportingManager</th>
+                    <th>Salary</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 	<script src="{{ asset('datatables/datatablelib.js') }}"></script>
 	<script src="{{ asset('datatables/index.js') }}"></script>
 </body>

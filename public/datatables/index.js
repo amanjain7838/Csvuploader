@@ -11,10 +11,12 @@ $(document).ready(function() {
             { "data": "ReportingManager" },
             { "data": "Salary" },
             { "data": "Department" }
-        ]
+        ],
+        "lengthMenu": [25, 50, 100, 500]
     });
     $('#upload_csv').on('submit', function(event){
         event.preventDefault();
+        $('.upload-loader').show();
         $.ajax({
             url:"../ajax/import",
             method:"POST",
@@ -28,6 +30,7 @@ $(document).ready(function() {
                 location.reload();
             },
             error:function(err){
+                $('.upload-loader').hide();
                 alert(err);
             }
         });
@@ -35,6 +38,7 @@ $(document).ready(function() {
 
     $('#reset-data').on('click',function(event){
         event.preventDefault();
+        $('.clear-data-loader').show();
         $.ajax({
             url:"../ajax/resetdata",
             method:"POST",
@@ -45,9 +49,13 @@ $(document).ready(function() {
                 location.reload();
             },
             error:function(err){
+                $('.clear-data-loader').hide();
                 alert(err);
             }
         });
+    });
+    $('#csv_file').on('change',function(){
+        $('#upload').removeClass('disabledbtn').removeAttr('disabled');
     });
 
 } );
