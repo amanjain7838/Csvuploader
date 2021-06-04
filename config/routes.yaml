@@ -1,3 +1,15 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+app_homepage:
+    path: /
+    controller: App\Controller\ClientController::index
+app_fetchdata:
+    path: /ajax/data
+    controller: App\Controller\AjaxController::fetchData
+app_importdata:
+    path: /ajax/import
+    controller: App\Controller\AjaxController::importData
+app_resetdata:
+    path: /ajax/resetdata
+    controller: App\Controller\AjaxController::resetData

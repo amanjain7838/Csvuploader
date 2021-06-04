@@ -2,15 +2,16 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class ClientController
+use App\Entity\CSV;
+use App\Repository\CSVRepository;
+
+class ClientController extends AbstractController
 {
-    public function number(): Response
+    public function index(Request $request): Response
     {
-        $number = random_int(0, 100);
-
-        return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
+        return $this->render('csvviewer/index.html.twig');
     }
 }

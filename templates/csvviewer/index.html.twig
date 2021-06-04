@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSV Uploader</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{asset('datatables/index.css')}}"/>
+
+</head>
+<body>
+   <form id="upload_csv" method="post" enctype="multipart/form-data">
+        <div class="col-md-3">
+             <label>Add Data</label>
+        </div>  
+        <div class="col-md-4">  
+           <input type="file" name="csv_file" id="csv_file" accept=".csv" style="margin-top:15px;" />
+        </div>  
+        <div class="col-md-5">  
+            <input type="submit" name="upload" id="upload" value="Upload" style="margin-top:10px;" class="btn btn-info" />
+        </div>  
+        <div style="clear:both"></div>
+   </form>
+    <div class="col-md-5">  
+        <a download="example.csv" href="/docs/importsheet.csv">Download Sample</a>
+        <button type="button" id="reset-data">Clear All Data</button>
+    </div>  
+        
+	<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>DOB</th>
+                <th>ReportingManager</th>
+                <th>Salary</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+    </table>
+	<script src="{{ asset('datatables/datatablelib.js') }}"></script>
+	<script src="{{ asset('datatables/index.js') }}"></script>
+</body>
+<script>
+
+</script>
+
+</html>
