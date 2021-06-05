@@ -29,7 +29,5 @@ Mysql 5.6
 ```
 
 ## Project setup
-```
 symfony Installation
-<a href="https://symfony.com/download">Symfony</a>
-```
+https://symfony.com/download
