@@ -30,4 +30,5 @@ Mysql 5.6
 
 ## Project setup
 symfony Installation
+<br>
 https://symfony.com/download
